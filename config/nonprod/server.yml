@@ -35,5 +35,3 @@ logger:
   logDir: logs             # folder for logs
 
 
-swagger:
-  host: localhost:8080

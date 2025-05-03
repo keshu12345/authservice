@@ -34,6 +34,3 @@ logger:
   compress: true
   logDir: logs            
 
-
-swagger:
-  host: localhost:8080

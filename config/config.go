@@ -36,7 +36,6 @@ type Configuration struct {
 	Server          Server       `mapstructure:"server"`
 	DB              DB           `mapstructure:"db"`
 	JwtSecretKey    string       `mapstructure:"secretKey"`
-	Swagger         Swagger      `mapstructure:"swagger"`
 	Logger          LoggerConfig `mapstructure:"logger"`
 }
 
@@ -71,8 +70,4 @@ type LoggerConfig struct {
 	LocalTime    bool   `yaml:"localTime"`    // use local time for timestamps
 	Compress     bool   `yaml:"compress"`     // compress rotated logs
 	LogDir       string `yaml:"logDir"`       // base directory for logs
-}
-
-type Swagger struct {
-	Host string
 }
