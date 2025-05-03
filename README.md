@@ -50,6 +50,13 @@ docker-compose up
 
 This will start all services defined in the Docker Compose file, and the auth service will be available at http://localhost:8080.
 
+### Start Application
+To start Apllication use docker command to run
+
+```base
+ docker-compose up
+```
+
 ### Docker Setup
 
 #### Docker Compose
