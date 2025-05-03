@@ -1,0 +1,48 @@
+# Binaries
+/authservice
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Build and test output
+*.out
+*.test
+*.log
+coverage.*
+*.prof
+
+# Go workspace
+vendor/
+
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Editor & IDEs
+.vscode/
+.idea/
+*.swp
+
+# Docker
+*.env
+docker-compose.override.yml
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+
+# Test cache
+**/__debug_bin
+**/*.test
+
+# Secret config files (if any)
+config.yaml
+config.local.yaml
+.env.*
