@@ -29,19 +29,19 @@ services:
     volumes:
       - pgadmin_data:/var/lib/pgadmin
 
-  # authservice:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   container_name: my_authservice
-  #   depends_on:
-  #     - postgres
-  #   ports:
-  #     - "8080:8080"
-  #   environment:
-  #     GIN_MODE: release
-  #   volumes:
-  #     - ./logs:/app/logs
+  authservice:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my_authservice
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    environment:
+      GIN_MODE: release
+    volumes:
+      - ./logs:/app/logs
 
 volumes:
   pgdata:
