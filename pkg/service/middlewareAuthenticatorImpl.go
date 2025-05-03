@@ -25,19 +25,13 @@ func (a *authService) ApiKeyAuthenticate(apiKey string) (*models.User, error) {
 func (a *authService) JwtTokenAuthenticate(token string) (*models.CustomClaims, bool, error) {
 	claims, err := utils.ParseToken(token, a.Cfg.JwtSecretKey)
 
-	a.Logger.Infof(":::::::::::::Claims::::::::::::: %+v", claims)
+	a.Logger.Infof("Claims:%+v", claims)
 	if err != nil {
 		a.Logger.Errorf("failed to parse token: %v", err)
 		return nil, false, err
 	}
-
-	// if claims.ExpiresAt.Time.Before(time.Now()) {
-	// 	a.Logger.Warnf("token expired: %v", claims.ExpiresAt.Time)
-	// 	return nil, false, fmt.Errorf("token expired")
-	// }
-
 	user, err := a.AuthDAO.GetUserByID(claims.UserID)
-	a.Logger.Infof(":::::::::::::User::::::::::::: %+v", user)
+	a.Logger.Infof("User: %+v", user)
 	if err != nil {
 		a.Logger.Errorf("failed to get user by ID: %v", err)
 		return nil, false, fmt.Errorf("failed to get user by ID: %v", err)
